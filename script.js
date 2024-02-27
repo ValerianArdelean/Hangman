@@ -5,7 +5,7 @@ let word = document.getElementById("word");
 let wordLength = find.length;
 let text = [];
 for (let i = 0; i < wordLength; ++i) {
-    text.push("_");
+    text.push(" _ ");
 }
 word.innerText = text;
 
@@ -15,7 +15,7 @@ function clickFunction() {
     for (let i = 0; i < wordLength; ++i) {
         if (find[i].toLowerCase() === letter) {
             found = true;
-            text[i] = find[i];
+            text[i] = ` ${find[i]} `;
             word.innerText = text;
             find[i] = '_';
             break;
