@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Gibbet</title>
+        <title>HANGMAN</title>
         <link href="style.css" rel="stylesheet" />
     </head>
     <body>
-        <h1>HANGMAN</h1>
-        <h3 id="lifes"> </h3>
-        <section class="flex" >
-            <h3 class="right" > Guess the following word: </h3>
-            <h3 id="word" > </h3>
+        <h1 class="text" >HANGMAN</h1>
+        <h3 class="text" id="lifes"> </h3>
+        <section>
+            <h3 class="text" > Guess the following word: </h3>
+            <h3  class="text" id="word" > </h3>
         </section>
         <section>
-            <form>
+            <form class="text" >
                 <legend>Insert here the letter that you want to guess</legend>
                 <input type="text" id="letter" name="letter" />
                 <button onclick="clickFunction(); return false;">SEND</button>
             </form>
         </section>
-        <script src="script.js"></script>
+        <script defer src="script.js"></script>
     </body>
 </html>
