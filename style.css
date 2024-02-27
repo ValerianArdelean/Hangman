@@ -1,35 +1,37 @@
-* {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 1px;
-}
 body {
     background-color: #D8F7FC;
 }
-h1 {
+h1, h3, form {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500px;
+    font-style: normal;
+    letter-spacing: 1px;
     text-align: center;
-    margin: 5%;
-}
-h3 {
-    display: inline-block;
     width: 48%;
-    min-width: 300px;
+    margin: 3%;
+}
+#lifes, h1, form {
+    width: 100%;
 }
 section {
     width: 95%;
-    min-width: 400px;
-    height: 30%;
+    min-width: 500px;
+    min-height: 65px;
     background: radial-gradient(#FFFFFF, #D8F7FC);
-}
-.flex {
     margin: auto;
+    margin-bottom:5%;
     display: flex;
-    display: -webkit-flexbox;
     flex-wrap: wrap;
-    -webkit-flex-wrap: -webkit-wrap;
-    justify-content: center;
+    -webkit-wrap: wrap;
 }
 .right {
     text-align: right;
+    margin-right:5%;
+}
+form {
+    margin: auto;
+    text-align: left;
+}
+button:hover {
+    cursor: pointer;
 }
