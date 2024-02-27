@@ -1,4 +1,4 @@
-let find = "Alexandria";
+let find = ['A','l','e','x','a','n','d','r','i','a'];
 let live = 7;
 document.getElementById("lifes").innerText = `You have ${live} lives left`;
 let word = document.getElementById("word");
@@ -8,13 +8,20 @@ for (let i = 0; i < wordLength; ++i) {
     text.push("_");
 }
 word.innerText = text;
+
 function clickFunction() {
-    let letter = document.getElementById("letter").value;
-    let result = parseInt(find.indexOf(letter));
-    if (result !== -1) {
-        text[result] = find[result];
-        word.innerText = text;
-    } else {
+    let letter = document.getElementById("letter").value.toLowerCase();
+    let found = false;
+    for (let i = 0; i < wordLength; ++i) {
+        if (find[i].toLowerCase() === letter) {
+            found = true;
+            text[i] = find[i];
+            word.innerText = text;
+            find[i] = '_';
+            break;
+        }
+    }
+    if (!found) {
         --live;
         document.getElementById("lifes").innerText = `You have ${live} lives left`;
     }
