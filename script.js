@@ -1,6 +1,6 @@
 let find = ['A','l','e','x','a','n','d','r','i','a'];
 let live = 7;
-document.getElementById("lifes").innerText = `You have ${live} lives left`;
+document.getElementById("lives").innerText = `*** ${live} *** lives left`;
 let word = document.getElementById("word");
 let wordLength = find.length;
 let text = [];
@@ -23,6 +23,6 @@ function clickFunction() {
     }
     if (!found) {
         --live;
-        document.getElementById("lifes").innerText = `You have ${live} lives left`;
+        document.getElementById("lives").innerText = `*** ${live} *** lives left`;
     }
 }
