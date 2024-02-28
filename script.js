@@ -1,33 +1,42 @@
 let wordToBeGuessed = ['A','l','e','x','a','n','d','r','i','a'];
+let guessedLetters = [];
+let displayLetters = document.getElementById("word");
 let wordLength = wordToBeGuessed.length;
 let lives = 7;
-function previewLives() {
+
+function createEmptyWord() {
+    for (let i = 0; i < wordLength; ++i) {
+        guessedLetters.push(" _ ");
+    }
+}
+
+function displayWord() {
+    displayLetters.innerText = guessedLetters;
+}
+
+function displayLives() {
     document.getElementById("lives").innerText = `*** ${lives} *** lives left`;
 }
-previewLives();
 
-let word = document.getElementById("word");
-let text = [];
-for (let i = 0; i < wordLength; ++i) {
-    text.push(" _ ");
-}
-word.innerText = text;
+createEmptyWord();
+displayWord()
+displayLives();
 
-function clickFunction() {
+function processUserInput() {
     let letter = document.getElementById("letter").value.toLowerCase();
-    let found = false;
+    let letterFound = false;
     for (let i = 0; i < wordLength; ++i) {
         if (wordToBeGuessed[i].toLowerCase() === letter) {
-            found = true;
-            text[i] = ` ${wordToBeGuessed[i]} `;
-            word.innerText = text;
+            letterFound = true;
+            guessedLetters[i] = ` ${wordToBeGuessed[i]} `;
+            displayWord();
             wordToBeGuessed[i] = '_';
             break;
         }
     }
-    if (!found && lives) {
+    if (!letterFound && lives) {
         --lives;
-        previewLives();
+        displayLives();
         if (parseInt(lives) === 0) {
             document.getElementById("outcome").innerText = "You lost, please try again !";
         }
