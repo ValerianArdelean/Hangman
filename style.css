@@ -9,7 +9,7 @@ h3 {
 }
 .text {
     font-family: "Roboto", sans-serif;
-    font-weight: 500px;
+    font-weight: 400px;
     font-style: normal;
     letter-spacing: 1px;
     text-align: center;
@@ -28,4 +28,7 @@ section {
 }
 button:hover {
     cursor: pointer;
+}
+#lives, #outcome, h1 {
+    color: #C75050;
 }
