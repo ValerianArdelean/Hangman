@@ -19,22 +19,21 @@ function displayLives() {
 }
 
 createEmptyWord();
-displayWord()
+displayWord();
 displayLives();
 
 function processUserInput() {
-    let letter = document.getElementById("letter").value.toLowerCase();
-    let letterFound = false;
-    for (let i = 0; i < wordLength; ++i) {
-        if (wordToBeGuessed[i].toLowerCase() === letter) {
-            letterFound = true;
-            guessedLetters[i] = ` ${wordToBeGuessed[i]} `;
-            displayWord();
-            wordToBeGuessed[i] = '_';
-            break;
+    let letter = document.getElementById("letter").value;
+    let letterFound = wordToBeGuessed.indexOf(letter);
+    if (parseInt(letterFound) !== -1 && lives && wordLength >= 0) {
+        --wordLength;
+        guessedLetters[letterFound] = ` ${letter} `;
+        wordToBeGuessed[letterFound] = '_';
+        displayWord();
+        if (wordLength == 0) {
+            document.getElementById("outcome").innerText = "You win, CONGRATULATIONS !";
         }
-    }
-    if (!letterFound && lives) {
+    } else if (lives && wordLength > 0) {
         --lives;
         displayLives();
         if (parseInt(lives) === 0) {
