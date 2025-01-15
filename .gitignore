@@ -1,3 +1,2 @@
-assets/preview.png
-*.png
 assets
+.DS_Store
