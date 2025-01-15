@@ -10,6 +10,10 @@ main {
 	width: 70%;
 	min-width: 400px;
 	background: radial-gradient(#FFFFFF, #D8F7FC);
+	align-self: center;
+	box-sizing: border-box;
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 section {
@@ -20,25 +24,47 @@ section {
 
 .text {
 	font-family: "Roboto", sans-serif;
-	font-weight: 400px;
-	font-style: normal;
+	font-weight: 400;
 	letter-spacing: 1px;
 	text-align: center;
-	margin-left: 5%;
+	margin-left: 3%;
+}
+
+button {
+	padding: 1.5%;
+	border: none;
+	border-radius: 5px;
+	background-color: #C75050;
+	color: white;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+input {
+	width: 10%;
+	min-width: 100px;
+	padding: 1.5%;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
 }
 
 .fade {
 	opacity: 30%;
 }
 
-button:hover {
-    cursor: pointer;
-}
-
 #lives, h1, .fade {
-    color: #C75050;
+	color: #C75050;
 }
 
-input {
-	width: 20%;
+@media (max-width: 600px) {
+	input, button {
+		width: 80%;
+		padding: 12px;
+		font-size: 18px;
+	}
 }
