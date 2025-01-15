@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-		<meta charset="utf-8">
-        <title>HANGMAN</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <h1 class="text" >HANGMAN</h1>
-        <h3 class="text" id="lives"> </h3>
-        <section>
-            <h3 class="text" > Guess the following: </h3>
-            <h3  class="text" id="word" > </h3>
-        </section>
-        <section>
-            <form class="text" >
-                <legend> Insert here the letter that you want to guess </legend>
-                <input type="text" id="letter" name="letter" />
-                <button onclick="processUserInput(); return false;">SEND</button>
-            </form>
-        </section>
-        <h3 class="text" id="outcome"></h3>
-        <script defer src="script.js"></script>
-    </body>
+<head>
+	<meta charset="utf-8">
+	<title>HANGMAN</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1 class="text" >HANGMAN</h1>
+		<h3 class="text" id="lives"> </h3>
+	</header>
+	<section>
+		<h3 class="text" > Guess the following: </h3>
+		<h3  class="text" id="word" > </h3>
+	</section>
+	<section>
+		<form class="text" >
+			<legend> Insert here the letter that you want to guess </legend>
+			<input type="text" id="letter" name="letter" />
+			<button onclick="processUserInput(); return false;">SEND</button>
+		</form>
+	</section>
+	<h3 class="text" id="outcome"></h3>
+	<script defer src="script.js"></script>
+</body>
 </html>
