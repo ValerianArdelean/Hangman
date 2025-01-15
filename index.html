@@ -9,20 +9,24 @@
 <body>
 	<header>
 		<h1 class="text">HANGMAN</h1>
-		<h3 class="text" id="lives"></h3>
+		<h3 class="text" id="lives" aria-live="polite"></h3>
 	</header>
-	<section>
-		<h3 class="text">Guess the following:</h3>
-		<h3 class="text" id="word"></h3>
-	</section>
-	<section>
-		<form class="text">
-			<legend> Insert here the letter that you want to guess </legend>
-			<input type="text" id="letter" name="letter"/>
-			<button onclick="processUserInput(); return false;">SEND</button>
-		</form>
-	</section>
-	<h3 class="text" id="outcome"></h3>
+	<main>
+		<section>
+			<h3 class="text">Guess the following:</h3>
+			<h3 class="text" id="word" aria-live="polite"></h3>
+		</section>
+		<section>
+			<form class="text">
+				<label for="letter">Insert letter: </label>
+				<input type="text" id="letter" name="letter" maxlength="1"/>
+				<button onclick="processUserInput(); return false;">SEND</button>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p class="text fade">Made with &hearts; by Valerian @ WellCode.</p>
+	</footer>
 	<script defer src="script.js"></script>
 </body>
 </html>

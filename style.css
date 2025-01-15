@@ -1,19 +1,18 @@
 body {
     background-color: #D8F7FC;
+	display: grid;
+	grid-template-rows: 15% 72% 5%;
+	height: 100vh;
 }
 
-header {
-	margin-top: 7%;
-	margin-bottom: 7%;
+main {
+	margin: auto;
+	width: 70%;
+	min-width: 400px;
+	background: radial-gradient(#FFFFFF, #D8F7FC);
 }
 
 section {
-    width: 70%;
-    min-width: 500px;
-    background: radial-gradient(#FFFFFF, #D8F7FC);
-    margin: auto;
-    margin-bottom:5%;
-    padding-left: 2%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -28,10 +27,18 @@ section {
 	margin-left: 5%;
 }
 
+.fade {
+	opacity: 30%;
+}
+
 button:hover {
     cursor: pointer;
 }
 
-#lives, #outcome, h1 {
+#lives, h1, .fade {
     color: #C75050;
+}
+
+input {
+	width: 20%;
 }
