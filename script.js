@@ -9,12 +9,14 @@ let getWordPlace = document.getElementById("word");
 getWordPlace.innerText = guessedLetters;
 
 function processUserInput() {
-    let letter = document.getElementById("letter").value;
-    let letterFound = wordToBeGuessed.indexOf(letter);
+    let letter = document.getElementById("letter");
+    let letterFound = wordToBeGuessed.indexOf(letter.value);
     let outcome = document.getElementById("outcome");
-    if (parseInt(letterFound) !== -1 && livesCount) {
+	if ((!letter.value || !letter.value.match(/[a-z]/i)) && livesCount && wordLength > 0) {
+		alert("Please enter a valid single letter.");
+	} else if (parseInt(letterFound) !== -1 && livesCount) {
         --wordLength;
-        guessedLetters[letterFound] = ` ${letter} `;
+        guessedLetters[letterFound] = ` ${letter.value} `;
         wordToBeGuessed[letterFound] = '_';
 		getWordPlace.innerText = guessedLetters;
         if (wordLength == 0) {
@@ -26,5 +28,6 @@ function processUserInput() {
         if (parseInt(livesCount) === 0) {
 			statusInfo.innerText = "You lost, please try again !";
         }
-    }
+	}
+	letter.value = '';
 }
