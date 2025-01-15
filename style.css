@@ -2,15 +2,6 @@ body {
     background-color: #D8F7FC;
 }
 
-.text {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400px;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-align: center;
-    margin-left: 5%;
-}
-
 header {
 	margin-top: 7%;
 	margin-bottom: 7%;
@@ -26,6 +17,15 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.text {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400px;
+	font-style: normal;
+	letter-spacing: 1px;
+	text-align: center;
+	margin-left: 5%;
 }
 
 button:hover {
