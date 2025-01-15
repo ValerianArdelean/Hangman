@@ -1,5 +1,4 @@
 # Hangman
-
 <figure style="text-align: center;">
     <picture>
         <img src="assets/preview.png" alt="Screen shot of the app" style="max-width: 100%; height: auto;"/>
