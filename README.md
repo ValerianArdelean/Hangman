@@ -4,8 +4,7 @@
     <picture>
         <img src="assets/preview.png" alt="Screen shot of the app" style="max-width: 100%; height: auto;"/>
     </picture>
-    <figcaption>Screen shot of the app showing the word to be quess and a form 
-for inserting the letters you supose the word have.</figcaption>
+    <figcaption>Screen shot of the app</figcaption>
 </figure>
 
 ## Description
