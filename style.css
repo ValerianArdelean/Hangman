@@ -1,5 +1,5 @@
 body {
-    background-color: #D8F7FC;
+	background-color: #D8F7FC;
 	display: grid;
 	grid-template-rows: 15% 72% 5%;
 	height: 100vh;
@@ -17,9 +17,9 @@ main {
 }
 
 section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .text {
