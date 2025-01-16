@@ -15,19 +15,19 @@ function processUserInput() {
 	if ((!letter.value || !letter.value.match(/[a-z]/i)) && livesCount && wordLength > 0) {
 		alert("Please enter a valid single letter.");
 	} else if (parseInt(letterFound) !== -1 && livesCount) {
-        --wordLength;
-        guessedLetters[letterFound] = ` ${letter.value} `;
-        wordToBeGuessed[letterFound] = '_';
+		--wordLength;
+		guessedLetters[letterFound] = ` ${letter.value} `;
+		wordToBeGuessed[letterFound] = '_';
 		getWordPlace.innerText = guessedLetters;
-        if (wordLength == 0) {
+        	if (wordLength == 0) {
 			statusInfo.innerText = "You win, CONGRATULATIONS !";
-        }
-    } else if (livesCount && wordLength > 0) {
-        --livesCount;
+		}
+	} else if (livesCount && wordLength > 0) {
+		--livesCount;
 		statusInfo.innerText = `*** ${livesCount} *** lives left`;
-        if (parseInt(livesCount) === 0) {
+		if (parseInt(livesCount) === 0) {
 			statusInfo.innerText = "You lost, please try again !";
-        }
+		}
 	}
 	letter.value = '';
 }
