@@ -7,11 +7,15 @@ let wordLength = wordToBeGuessed.length;
 
 let guessedLetters = Array(wordLength).fill(" _ ");
 
-let statusInfo = document.getElementById("statusInfo");
-statusInfo.innerText = `*** ${livesCount} *** lives left`;
-
 let getWordPlace = document.getElementById("word");
 getWordPlace.innerText = guessedLetters;
+
+function updateStatus(message) {
+	let statusInfo = document.getElementById("statusInfo");
+	statusInfo.innerText = message;
+}
+
+updateStatus(`*** ${livesCount} *** lives left`);
 
 function processUserInput() {
     let letter = document.getElementById("letter");
@@ -25,13 +29,13 @@ function processUserInput() {
 		wordToBeGuessed[letterFound] = '_';
 		getWordPlace.innerText = guessedLetters;
         	if (wordLength == 0) {
-			statusInfo.innerText = "You win, CONGRATULATIONS !";
+				updateStatus("You win, CONGRATULATIONS !");
 		}
 	} else if (livesCount && wordLength > 0) {
 		--livesCount;
-		statusInfo.innerText = `*** ${livesCount} *** lives left`;
+		updateStatus(`*** ${livesCount} *** lives left`);
 		if (parseInt(livesCount) === 0) {
-			statusInfo.innerText = "You lost, please try again !";
+			updateStatus("You lost, please try again !");
 		}
 	}
 	letter.value = '';
