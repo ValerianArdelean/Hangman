@@ -1,10 +1,15 @@
 const MAX_LIVES = 7;
+
 let livesCount = MAX_LIVES;
+
 let wordToBeGuessed = ['A','l','e','x','a','n','d','r','i','a'];
 let wordLength = wordToBeGuessed.length;
+
 let guessedLetters = Array(wordLength).fill(" _ ");
-let statusInfo = document.getElementById("lives");
+
+let statusInfo = document.getElementById("statusInfo");
 statusInfo.innerText = `*** ${livesCount} *** lives left`;
+
 let getWordPlace = document.getElementById("word");
 getWordPlace.innerText = guessedLetters;
 

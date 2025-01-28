@@ -57,7 +57,7 @@ input {
 	opacity: 30%;
 }
 
-#lives, h1, .fade {
+#statusInfo, h1, .fade {
 	color: #C75050;
 }
 
