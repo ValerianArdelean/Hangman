@@ -1,42 +1,46 @@
 const MAX_LIVES = 7;
 
-let livesCount = MAX_LIVES;
+let livesLeft = MAX_LIVES;
 
-let wordToBeGuessed = ['A','l','e','x','a','n','d','r','i','a'];
-let wordLength = wordToBeGuessed.length;
+let hiddenWord = ['A','l','e','x','a','n','d','r','i','a'];
+let remainingLetters = hiddenWord.length;
+let revealedWord = Array(remainingLetters).fill(" _ ");
+let wordPlaceHolder = document.getElementById("word");
 
-let guessedLetters = Array(wordLength).fill(" _ ");
+function initializeGame() {
+	wordPlaceHolder.innerText = revealedWord;
+	updateStatusMessage(`*** ${livesLeft} *** lives left`);
+}
 
-let getWordPlace = document.getElementById("word");
-getWordPlace.innerText = guessedLetters;
-
-function updateStatus(message) {
+function updateStatusMessage(message) {
 	let statusInfo = document.getElementById("statusInfo");
 	statusInfo.innerText = message;
 }
 
-updateStatus(`*** ${livesCount} *** lives left`);
-
 function processUserInput() {
-    let letter = document.getElementById("letter");
-    let letterFound = wordToBeGuessed.indexOf(letter.value);
-    let outcome = document.getElementById("outcome");
-	if ((!letter.value || !letter.value.match(/[a-z]/i)) && livesCount && wordLength > 0) {
+	if (livesLeft <= 0 || remainingLetters <= 0) {
+		return;
+	}
+	let letter = document.getElementById("letter");
+	let letterFound = hiddenWord.indexOf(letter.value);
+	if (!letter.value || !letter.value.match(/[a-z]/i)) {
 		alert("Please enter a valid single letter.");
-	} else if (parseInt(letterFound) !== -1 && livesCount) {
-		--wordLength;
-		guessedLetters[letterFound] = ` ${letter.value} `;
-		wordToBeGuessed[letterFound] = '_';
-		getWordPlace.innerText = guessedLetters;
-        	if (wordLength == 0) {
-				updateStatus("You win, CONGRATULATIONS !");
-		}
-	} else if (livesCount && wordLength > 0) {
-		--livesCount;
-		updateStatus(`*** ${livesCount} *** lives left`);
-		if (parseInt(livesCount) === 0) {
-			updateStatus("You lost, please try again !");
+	} else if (letterFound !== -1) {
+		hiddenWord[letterFound] = '_';
+		revealedWord[letterFound] = ` ${letter.value} `;
+		--remainingLetters;
+		wordPlaceHolder.innerText = revealedWord;
+			if (remainingLetters == 0) {
+				updateStatusMessage("You win, CONGRATULATIONS !");
+			}
+	} else {
+		--livesLeft;
+		updateStatusMessage(`*** ${livesLeft} *** lives left`);
+		if (livesLeft === 0) {
+			updateStatusMessage("You lost, please try again !");
 		}
 	}
 	letter.value = '';
 }
+
+initializeGame();
